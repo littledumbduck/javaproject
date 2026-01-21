@@ -1,6 +1,5 @@
 package boletin_13;
 
-import java.nio.channels.ScatteringByteChannel;
 import java.util.Random;
 
 public class Ejercicio_02 {
@@ -13,7 +12,7 @@ public class Ejercicio_02 {
         try {
             if(num == 0){
                 throw new Exception("El número es par");
-            } else if (num == 1){
+            } else {
                 throw new Exception("El número es impar");
             }
         } catch (Exception error) {

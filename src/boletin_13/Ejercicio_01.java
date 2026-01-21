@@ -14,8 +14,9 @@ public class Ejercicio_01 {
                 System.out.print("Type number: ");
                 num = input.nextDouble();
                 loop = false;
-            } catch(Exception e){
-                System.out.println("Not a valid number");
+            } catch(InputMismatchException e){
+                System.out.println(e.getMessage());
+                System.out.println("Invalid input. Try again with a number.");
                 input.next();
             }
         }
