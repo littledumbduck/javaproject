@@ -3,6 +3,7 @@ package ficheros;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 // File: para abrir un fichero
 
@@ -42,6 +43,14 @@ public class Testing {
                 writer.close();
             } catch (IOException e2) {
                 throw new RuntimeException(e2.getMessage());
+            }
+        }
+    }
+
+    public void prueba() {
+        for(int i=1;i<10;i++) {
+            if(i % 2 == 0) {
+                System.out.println(i * 2);
             }
         }
     }

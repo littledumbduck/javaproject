@@ -1,9 +1,7 @@
 package boletin_14;
 
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.io.FileReader;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -22,12 +20,16 @@ public class Ejercicio05 {
             fr2 = new FileReader(scanner + ".txt");
             br2 = new BufferedReader(fr2);
 
-            char[] order =  br2.readLine().toCharArray();
-            Arrays.sort(order);
+            ArrayList<String> arrayOrder = new ArrayList<String>();
+            String order;
+            while ((order =  br2.readLine()) != null) {
+                arrayOrder.add(order);
+            }
 
+            arrayOrder.stream().sorted().forEach(System.out::println);
             fr = new FileWriter(scanner + "_sort.txt");
             pw = new PrintWriter(fr);
-            for (char c : order) {
+            for (String c : arrayOrder) {
                 pw.write(c);
             }
         } catch (Exception e) {
@@ -38,7 +40,7 @@ public class Ejercicio05 {
                 fr.close();
                 br2.close();
                 fr2.close();
-            } catch (Exception e) {
+            } catch (NullPointerException | IOException e) {
                 System.out.println(e.getMessage());
             }
         }
